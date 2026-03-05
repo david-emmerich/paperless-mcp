@@ -75,7 +75,7 @@ The document tools return JSON data with document IDs that you can use to constr
 
   if (useHttp) {
     const app = express();
-    app.use(express.json());
+    app.use(express.json({ limit: "10mb" }));
 
     // Store transports for each session
     const sseTransports: Record<string, SSEServerTransport> = {};
